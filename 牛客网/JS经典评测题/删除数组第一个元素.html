@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    window.onload = function () {
+        console.log(curtail([1, 2, 3, 4, 5]).join());
+    }
+
+    function curtail(arr) {
+        // if (arr && arr.length > 0 && Array.isArray(arr)) {
+        //     //shift()方法用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组。
+        //     let deleteItem = arr.shift();
+        // }
+        // return arr;
+        let newArr = [];
+        if (arr && arr.length > 0 && Array.isArray(arr)) {
+            //slice方法用于提取目标数组的一部分，返回一个新数组，原数组不变。
+            newArr = arr.slice(1);
+        }
+        return newArr;
+    }
+
+</script>
+
+</html>

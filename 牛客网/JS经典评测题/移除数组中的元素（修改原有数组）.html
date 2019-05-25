@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    window.onload = function () {
+        console.log(removeWithoutCopy([1, 2, 2, 3, 4, 2, 2], 2).join());
+    }
+
+    //splice方法用于删除原数组的一部分成员，并可以在删除的位置添加新的数组成员，返回值是被删除的元素。注意，该方法会改变原数组。
+    function removeWithoutCopy(arr, item) {
+        var deleteItemIndexArr = [];
+        arr.map(function (elem, index, array) {
+            if (elem == item) {
+                deleteItemIndexArr.push(index);
+            }
+        });
+
+        //console.log('');
+        //console.log(deleteItemIndexArr.join());
+
+        //删除元素后，原有数组会被改变，因此原来的下标也会随之变化
+        for (var i = 0; i < deleteItemIndexArr.length; i++) {
+            var deleteItem = arr.splice(deleteItemIndexArr[i] - i, 1);
+            //console.log('');
+            //console.log('deleteItem=' + deleteItem);
+            //console.log('delete index = ' + deleteItemIndexArr[i]);
+        }
+
+        return arr;
+    }
+
+
+
+</script>
+
+</html>

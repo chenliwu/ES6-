@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    window.onload = function () {
+        console.log(append([1, 2, 3, 4], 5).join());
+    }
+
+    //在数组 arr 末尾添加元素 item。不要直接修改数组 arr，结果返回新的数组。
+    //数组元素可以使用push()，但是push()会改变原有数组。
+    function append(arr, item) {
+        // //利用数组的slice方法，提取数组的所有元素，返回一个新数组
+        // var returnArr = arr.splice(0);
+        // returnArr.push(item);
+        // return returnArr;
+        var returnArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            returnArr.push(arr[i]);
+        }
+        returnArr.push(item);
+        return returnArr;
+    }
+
+
+
+
+</script>
+
+</html>

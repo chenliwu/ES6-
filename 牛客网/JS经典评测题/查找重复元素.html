@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    window.onload = function () {
+        console.log(duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3]).join());
+    }
+
+    //找出数组 arr 中重复出现过的元素
+    function duplicates(arr) {
+        var ansArr = [];
+        var ansSet = {};
+        arr.map(function (item, index, arrTemp) {
+            var lastIndex = arr.lastIndexOf(item);
+            if (lastIndex != -1 && lastIndex != index) {
+                if (!ansSet[item]) {
+                    ansSet[item] = 1;
+                    ansArr.push(item);
+                }
+            }
+        });
+        return ansArr.sort();
+    }
+
+
+</script>
+
+</html>

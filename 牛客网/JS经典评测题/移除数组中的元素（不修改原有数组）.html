@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    window.onload = function () {
+        console.log(remove([1, 2, 3, 4, 5], 3).join());
+    }
+
+    /**
+    * 移除数组 arr 中的所有值与 item 相等的元素。不要直接修改数组 arr，结果返回新的数组
+    */
+    function remove(arr, item) {
+
+        // var returnArr = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (item != arr[i]) {
+        //         returnArr.push(arr[i]);
+        //     }
+        // }
+        // return returnArr;
+
+        return arr.filter(function (arrItem) {
+            return arrItem != item;
+        });
+
+        //map方法将数组的所有成员依次传入参数函数，然后把每一次的执行结果组成一个新数组返回。
+        //当不执行return 语句的时候，返回空
+        //[1, 2, 3, 4, 5],3  返回1,2,,4,5
+        // var returnArr = [];
+        // arr.map(function (elem, index, arr) {
+        //     // if (elem != item) {
+        //     //     return elem;
+        //     // }
+        //     if (elem != item) {
+        //         returnArr.push(elem);
+        //     }
+        // });
+        // return returnArr;
+    }
+
+    //定义一个新数组，简单用for循环遍历判断，返回一个新数组
+    function remove1(arr, item) {
+        var returnArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (item != arr[i]) {
+                returnArr.push(arr[i]);
+            }
+        }
+        return returnArr;
+    }
+
+    //使用filter方法：filter方法用于过滤数组成员，满足条件的成员组成一个新数组返回。
+    //它的参数是一个函数，所有数组成员依次执行该函数，返回结果为true的成员组成一个新数组返回。该方法不会改变原数组。
+    function remove2(arr, item) {
+        return arr.filter(function (arrItem) {
+            return arrItem != item;
+        });
+    }
+
+    function remove3(arr, item) {
+        //map方法将数组的所有成员依次传入参数函数，然后把每一次的执行结果组成一个新数组返回。
+        //当不执行return 语句的时候，返回空
+        //[1, 2, 3, 4, 5],3  返回1,2,,4,5
+        var returnArr = [];
+        arr.map(function (elem, index, arr) {
+            if (elem != item) {
+                returnArr.push(elem);
+            }
+        });
+        return returnArr;
+    }
+
+
+
+</script>
+
+</html>

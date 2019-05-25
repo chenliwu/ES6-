@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    window.onload = function () {
+        let arr = [1, 2, 3];
+        let msum = sum(arr);
+        //console.log(msum);
+        console.log(sum1(arr));
+    }
+
+    function sum(arr) {
+        let msum = 0;
+        let length = arr.length;
+        for (let i = 0; i < length; i++) {
+            if (typeof arr[i] === 'number') {
+                msum += arr[i];
+            }
+        }
+        return msum;
+    }
+
+    //reduce方法求和
+    //reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。
+    //它们的差别是，reduce是从左到右处理（从第一个成员到最后一个成员），reduceRight则是从右到左（从最后一个成员到第一个成员），其他完全一样。
+    function sum1(arr) {
+        console.log(Array.isArray(arr));
+        if (Array.isArray(arr)) {
+            return arr.reduce(function (a, b) {
+                return a + b;
+            })
+        }
+        return 0;
+    }
+
+
+</script>
+
+</html>

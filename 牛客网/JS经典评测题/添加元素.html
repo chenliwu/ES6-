@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    window.onload = function () {
+        console.log(prepend([1, 2, 3], 4).join());
+    }
+
+    //在数组 arr 开头添加元素 item。不要直接修改数组 arr，结果返回新的数组
+    function prepend(arr, item) {
+        var returnArr = [];
+        returnArr.push(item);
+        returnArr.push(arr.slice(0));
+        return returnArr;
+    }
+
+    function prepend1(arr, item) {
+        return arr.concat([item]);
+    }
+
+</script>
+
+</html>
